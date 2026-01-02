@@ -5,9 +5,9 @@
   <title>Le Bal de l’IUT de Nice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts et icônes -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,20 +27,20 @@
       z-index: -1;
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
+      padding: 15px 30px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(12px);
-      z-index: 100;
+      z-index: 1000;
       border-bottom: 1px solid rgba(216,193,159,0.3);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav h1 {
@@ -55,7 +55,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 40px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
@@ -76,20 +76,14 @@
       background: #D8C19F;
       transition: width 0.3s;
       position: absolute;
-      bottom: -5px;
+      bottom: -4px;
       left: 0;
     }
 
     nav a:hover::after { width: 100%; }
+    nav a i:hover { color: #fff; transform: scale(1.1); }
 
-    .nav-right {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    #langToggle {
+    #langToggle, #instagramBtn {
       border: 1px solid #D8C19F;
       background: transparent;
       color: #D8C19F;
@@ -97,22 +91,11 @@
       cursor: pointer;
       font-weight: 500;
       transition: 0.3s;
+      margin-left: 10px;
     }
 
-    #langToggle:hover {
-      background: #D8C19F;
-      color: #000;
-    }
+    #langToggle:hover, #instagramBtn:hover { background: #D8C19F; color: #000; }
 
-    .nav-right a i {
-      color: #D8C19F;
-      font-size: 1.4rem;
-      transition: 0.3s;
-    }
-
-    .nav-right a i:hover { color: #fff; transform: scale(1.1); }
-
-    /* HERO */
     header {
       height: 100vh;
       display: flex;
@@ -140,14 +123,16 @@
       opacity: 0.95;
     }
 
-    /* SECTIONS */
     section {
       padding: 120px 20px;
       display: flex;
       justify-content: center;
     }
 
-    .container { max-width: 1000px; width: 100%; }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
 
     section h3 {
       font-family: "Playfair Display", serif;
@@ -172,10 +157,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
+    .box:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 
     .box h4 {
       font-family: "Playfair Display", serif;
@@ -198,16 +180,13 @@
       border-top: 1px solid rgba(216,193,159,0.3);
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(20px);} 100% { opacity:1; transform: translateY(0);} }
 
     @media (max-width: 768px) {
       header h2 { font-size: 2.8rem; }
-      nav { padding: 20px; }
-      nav ul { gap: 20px; }
-      .nav-right { gap: 10px; }
+      nav { justify-content: center; gap: 10px; }
+      nav ul { gap: 15px; justify-content: center; }
+      #langToggle, #instagramBtn { margin-left: 0; margin-top: 5px; }
     }
   </style>
 </head>
@@ -217,49 +196,46 @@
     <h1>Bal de l’IUT</h1>
     <ul>
       <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-      <li><a href="about.html" data-fr="À propos" data-en="About">À propos</a></li>
+      <li><a href="about.html" data-fr="À Propos" data-en="About Us">À Propos</a></li>
     </ul>
-    <div class="nav-right">
+    <div style="display:flex; align-items:center; flex-wrap:wrap;">
       <button id="langToggle">EN</button>
-      <a href="https://www.instagram.com/bal_iut_nice/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a id="instagramBtn" href="https://www.instagram.com/bal_iut_nice/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="home">
+  <header>
     <div>
-      <h2 data-fr="Le Bal de l’IUT de Nice" data-en="The IUT of Nice Prom">Le Bal de l’IUT de Nice</h2>
+      <h2 data-fr="Le Bal de l’IUT de Nice" data-en="Nice IUT Prom">Le Bal de l’IUT de Nice</h2>
       <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
          data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
-         Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
+        Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
       </p>
     </div>
   </header>
 
-  <!-- PROJET -->
-  <section id="about">
+  <section>
     <div class="container">
-      <h3 data-fr="Le projet" data-en="The project">Le projet</h3>
-
+      <h3 data-fr="Le projet" data-en="The Project">Le projet</h3>
       <div class="columns">
         <div class="box">
-          <h4 data-fr="Une initiative étudiante" data-en="A student initiative">Une initiative étudiante</h4>
+          <h4 data-fr="Une initiative étudiante" data-en="A Student Initiative">Une initiative étudiante</h4>
           <p data-fr="Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT."
              data-en="We are five second-year BUT GEA students at the IUT of Nice. This associative project aims to organize the IUT prom.">
             Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT.
           </p>
         </div>
-
         <div class="box">
-          <h4 data-fr="Une soirée inoubliable" data-en="An unforgettable evening">Une soirée inoubliable</h4>
+          <h4 data-fr="Une soirée inoubliable" data-en="An Unforgettable Evening">Une soirée inoubliable</h4>
           <p data-fr="Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants."
              data-en="Our ambition is to offer a friendly and elegant evening, combining celebration, sharing, and lasting memories for all students.">
             Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants.
           </p>
         </div>
-
         <div class="box">
-          <h4 data-fr="Bientôt disponible" data-en="Coming soon">Bientôt disponible</h4>
+          <h4 data-fr="Bientôt disponible" data-en="Coming Soon">Bientôt disponible</h4>
           <p data-fr="Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site."
              data-en="Information regarding ticketing, location, and schedule will be available soon on this website.">
             Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site.
@@ -274,14 +250,22 @@
   </footer>
 
   <script>
-    let lang = "fr";
     const toggle = document.getElementById("langToggle");
     const elements = document.querySelectorAll("[data-fr]");
 
+    let lang = localStorage.getItem("lang") || "fr";
+
+    const updateText = () => {
+      elements.forEach(el => el.textContent = el.dataset[lang]);
+      toggle.textContent = lang === "fr" ? "EN" : "FR";
+    };
+
+    updateText();
+
     toggle.addEventListener("click", () => {
       lang = lang === "fr" ? "en" : "fr";
-      toggle.textContent = lang === "fr" ? "EN" : "FR";
-      elements.forEach(el => el.textContent = el.dataset[lang]);
+      localStorage.setItem("lang", lang);
+      updateText();
     });
   </script>
 

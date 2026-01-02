@@ -5,9 +5,9 @@
   <title>Le Bal de l’IUT de Nice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts et icônes -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,20 +27,20 @@
       z-index: -1;
     }
 
-    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
+      padding: 15px 30px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
       background: rgba(0,0,0,0.45);
       backdrop-filter: blur(12px);
-      z-index: 100;
+      z-index: 1000;
       border-bottom: 1px solid rgba(216,193,159,0.3);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav h1 {
@@ -55,7 +55,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 40px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
@@ -76,20 +76,14 @@
       background: #D8C19F;
       transition: width 0.3s;
       position: absolute;
-      bottom: -5px;
+      bottom: -4px;
       left: 0;
     }
 
     nav a:hover::after { width: 100%; }
+    nav a i:hover { color: #fff; transform: scale(1.1); }
 
-    .nav-right {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    #langToggle {
+    #langToggle, #instagramBtn {
       border: 1px solid #D8C19F;
       background: transparent;
       color: #D8C19F;
@@ -97,22 +91,11 @@
       cursor: pointer;
       font-weight: 500;
       transition: 0.3s;
+      margin-left: 10px;
     }
 
-    #langToggle:hover {
-      background: #D8C19F;
-      color: #000;
-    }
+    #langToggle:hover, #instagramBtn:hover { background: #D8C19F; color: #000; }
 
-    .nav-right a i {
-      color: #D8C19F;
-      font-size: 1.4rem;
-      transition: 0.3s;
-    }
-
-    .nav-right a i:hover { color: #fff; transform: scale(1.1); }
-
-    /* HERO */
     header {
       padding: 180px 20px 80px;
       display: flex;
@@ -138,14 +121,16 @@
       opacity: 0.95;
     }
 
-    /* SECTIONS */
     section {
       padding: 120px 20px;
       display: flex;
       justify-content: center;
     }
 
-    .container { max-width: 1000px; width: 100%; }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
 
     section h3 {
       font-family: "Playfair Display", serif;
@@ -167,7 +152,7 @@
       max-width: 650px;
       height: auto;
       border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s;
     }
 
@@ -181,16 +166,13 @@
       border-top: 1px solid rgba(216,193,159,0.3);
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(20px);} 100% { opacity:1; transform: translateY(0);} }
 
     @media (max-width: 768px) {
       header h2 { font-size: 2.8rem; }
-      nav { padding: 20px; }
-      nav ul { gap: 20px; }
-      .nav-right { gap: 10px; }
+      nav { justify-content: center; gap: 10px; }
+      nav ul { gap: 15px; justify-content: center; }
+      #langToggle, #instagramBtn { margin-left: 0; margin-top: 5px; }
     }
   </style>
 </head>
@@ -200,29 +182,29 @@
     <h1>Bal de l’IUT</h1>
     <ul>
       <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-      <li><a href="about.html" data-fr="À propos" data-en="About">À propos</a></li>
+      <li><a href="about.html" data-fr="À Propos" data-en="About Us">À Propos</a></li>
     </ul>
-    <div class="nav-right">
+    <div style="display:flex; align-items:center; flex-wrap:wrap;">
       <button id="langToggle">EN</button>
-      <a href="https://www.instagram.com/bal_iut_nice/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a id="instagramBtn" href="https://www.instagram.com/bal_iut_nice/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="home">
+  <header>
     <div>
-      <h2 data-fr="Notre organisation" data-en="Our organization">Notre organisation</h2>
+      <h2 data-fr="Notre organisation" data-en="Our Team">Notre organisation</h2>
       <p data-fr="Découvrez comment notre comité organise ce bal exceptionnel, alliant élégance et festivité." 
-         data-en="Discover how our committee organizes this exceptional gala, blending elegance and festivity.">
-         Découvrez comment notre comité organise ce bal exceptionnel, alliant élégance et festivité.
+         data-en="Discover how our committee organizes this exceptional event, blending elegance and celebration.">
+        Découvrez comment notre comité organise ce bal exceptionnel, alliant élégance et festivité.
       </p>
     </div>
   </header>
 
-  <!-- ORGANIGRAMME -->
-  <section id="organization">
+  <section>
     <div class="container">
-      <h3 data-fr="L’équipe organisatrice" data-en="The organizing team">L’équipe organisatrice</h3>
+      <h3 data-fr="L’équipe organisatrice" data-en="The Organizing Team">L’équipe organisatrice</h3>
       <div class="image-wrapper">
         <img src="images/organization.jpg" alt="Organisation du bal de l’IUT">
       </div>
@@ -234,14 +216,22 @@
   </footer>
 
   <script>
-    let lang = "fr";
     const toggle = document.getElementById("langToggle");
     const elements = document.querySelectorAll("[data-fr]");
 
+    let lang = localStorage.getItem("lang") || "fr";
+
+    const updateText = () => {
+      elements.forEach(el => el.textContent = el.dataset[lang]);
+      toggle.textContent = lang === "fr" ? "EN" : "FR";
+    };
+
+    updateText();
+
     toggle.addEventListener("click", () => {
       lang = lang === "fr" ? "en" : "fr";
-      toggle.textContent = lang === "fr" ? "EN" : "FR";
-      elements.forEach(el => el.textContent = el.dataset[lang]);
+      localStorage.setItem("lang", lang);
+      updateText();
     });
   </script>
 
