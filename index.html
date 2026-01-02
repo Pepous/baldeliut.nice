@@ -2,100 +2,249 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Le Bal de l’IUT de Nice – Site officiel</title>
+  <title>Le Bal de l’IUT de Nice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      background: url("images/background.png") center/cover no-repeat fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    #langToggle {
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      padding: 6px 14px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    section h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+    }
+
+    .box h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .box p {
+      line-height: 1.7;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      header h2 {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">Bal de l’IUT</div>
+  <nav>
+    <h1>Bal de l’IUT</h1>
     <ul>
-      <li>
-        <a href="#home"
-           data-fr="Accueil"
-           data-en="Home">Accueil</a>
-      </li>
-      <li>
-        <a href="#about"
-           data-fr="À propos"
-           data-en="About">À propos</a>
-      </li>
+      <li><a href="#home" data-fr="Accueil" data-en="Home">Accueil</a></li>
+      <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
     </ul>
     <button id="langToggle">EN</button>
   </nav>
 
-  <!-- ACCUEIL -->
-  <section id="home" class="section">
-    <div class="content">
-      <h1
-        data-fr="Le Bal de l’IUT de Nice"
-        data-en="The IUT of Nice Prom">
+  <!-- HERO -->
+  <header id="home">
+    <div>
+      <h2 data-fr="Le Bal de l’IUT de Nice"
+          data-en="The IUT of Nice Prom">
         Le Bal de l’IUT de Nice
-      </h1>
-
-      <p
-        data-fr="Bienvenue sur le site de notre association !"
-        data-en="Welcome to our association's website!">
-        Bienvenue sur le site de notre association !
-      </p>
-
-      <p
-        data-fr="Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice et nous avons choisi de consacrer notre projet associatif à l’organisation du bal de l’IUT."
-        data-en="We are five second-year BUT GEA students at the IUT of Nice, and we chose to dedicate our associative project to organizing the IUT prom.">
-        Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice et nous avons choisi de consacrer notre projet associatif à l’organisation du bal de l’IUT.
-      </p>
-
-      <p
-        data-fr="Ce projet nous tient particulièrement à cœur : notre objectif est de créer une soirée inoubliable pour tous les étudiants, mêlant convivialité, fête et souvenirs mémorables."
-        data-en="This project is very close to our hearts: our goal is to create an unforgettable evening for all students, combining celebration, conviviality, and lasting memories.">
-        Ce projet nous tient particulièrement à cœur : notre objectif est de créer une soirée inoubliable pour tous les étudiants, mêlant convivialité, fête et souvenirs mémorables.
-      </p>
-
-      <p
-        data-fr="Le bal aura lieu au mois de mars, et nous travaillons activement pour vous proposer un événement à la hauteur de vos attentes."
-        data-en="The prom will take place in March, and we are actively working to offer you an event that meets your expectations.">
-        Le bal aura lieu au mois de mars, et nous travaillons activement pour vous proposer un événement à la hauteur de vos attentes.
-      </p>
-
-      <p
-        data-fr="Sur ce site, vous retrouverez prochainement toutes les informations concernant la soirée, la billetterie et le lieu."
-        data-en="On this website, you will soon find all the information regarding the evening, ticketing, and location.">
-        Sur ce site, vous retrouverez prochainement toutes les informations concernant la soirée, la billetterie et le lieu.
-      </p>
-
-      <p
-        data-fr="Merci pour votre soutien et à très bientôt pour la suite de l’aventure !"
-        data-en="Thank you for your support and see you very soon for the rest of the adventure!">
-        Merci pour votre soutien et à très bientôt pour la suite de l’aventure !
-      </p>
-    </div>
-  </section>
-
-  <!-- À PROPOS -->
-  <section id="about" class="section">
-    <div class="content">
-      <h2
-        data-fr="À propos du projet"
-        data-en="About the project">
-        À propos du projet
       </h2>
-
-      <p
-        data-fr="Ce site est le site officiel du bal de promo de l’IUT, organisé par une association étudiante dans le cadre d’un projet académique."
-        data-en="This website is the official site of the IUT prom, organized by a student association as part of an academic project.">
-        Ce site est le site officiel du bal de promo de l’IUT, organisé par une association étudiante dans le cadre d’un projet académique.
+      <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
+         data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
+        Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
       </p>
+    </div>
+  </header>
+
+  <!-- PROJET -->
+  <section id="about">
+    <div class="container">
+      <h3 data-fr="Le projet"
+          data-en="The project">
+        Le projet
+      </h3>
+
+      <div class="columns">
+        <div class="box">
+          <h4 data-fr="Une initiative étudiante"
+              data-en="A student initiative">
+            Une initiative étudiante
+          </h4>
+          <p data-fr="Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT."
+             data-en="We are five second-year BUT GEA students at the IUT of Nice. This associative project aims to organize the IUT prom.">
+            Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT.
+          </p>
+        </div>
+
+        <div class="box">
+          <h4 data-fr="Une soirée inoubliable"
+              data-en="An unforgettable evening">
+            Une soirée inoubliable
+          </h4>
+          <p data-fr="Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants."
+             data-en="Our ambition is to offer a friendly and elegant evening, combining celebration, sharing, and lasting memories for all students.">
+            Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants.
+          </p>
+        </div>
+
+        <div class="box">
+          <h4 data-fr="Bientôt disponible"
+              data-en="Coming soon">
+            Bientôt disponible
+          </h4>
+          <p data-fr="Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site."
+             data-en="Information regarding ticketing, location, and schedule will be available soon on this website.">
+            Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+  <footer>
+    © Bal de l’IUT de Nice — Projet associatif étudiant
+  </footer>
+
+  <script>
+    let lang = "fr";
+    const toggle = document.getElementById("langToggle");
+    const elements = document.querySelectorAll("[data-fr]");
+
+    toggle.addEventListener("click", () => {
+      lang = lang === "fr" ? "en" : "fr";
+      toggle.textContent = lang === "fr" ? "EN" : "FR";
+      elements.forEach(el => el.textContent = el.dataset[lang]);
+    });
+  </script>
+
 </body>
 </html>
