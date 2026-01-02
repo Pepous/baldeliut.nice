@@ -31,7 +31,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 15px 30px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -83,6 +83,13 @@
     nav a:hover::after { width: 100%; }
     nav a i:hover { color: #fff; transform: scale(1.1); }
 
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     #langToggle, #instagramBtn {
       border: 1px solid #D8C19F;
       background: transparent;
@@ -91,7 +98,6 @@
       cursor: pointer;
       font-weight: 500;
       transition: 0.3s;
-      margin-left: 10px;
     }
 
     #langToggle:hover, #instagramBtn:hover { background: #D8C19F; color: #000; }
@@ -186,7 +192,8 @@
       header h2 { font-size: 2.8rem; }
       nav { justify-content: center; gap: 10px; }
       nav ul { gap: 15px; justify-content: center; }
-      #langToggle, #instagramBtn { margin-left: 0; margin-top: 5px; }
+      .nav-buttons { justify-content: center; margin-top: 5px; }
+      #langToggle, #instagramBtn { margin-left: 0; }
     }
   </style>
 </head>
@@ -198,7 +205,7 @@
       <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
       <li><a href="about.html" data-fr="À Propos" data-en="About Us">À Propos</a></li>
     </ul>
-    <div style="display:flex; align-items:center; flex-wrap:wrap;">
+    <div class="nav-buttons">
       <button id="langToggle">EN</button>
       <a id="instagramBtn" href="https://www.instagram.com/bal_iut_nice/" target="_blank">
         <i class="fab fa-instagram"></i>
