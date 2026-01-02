@@ -7,6 +7,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome pour l'icône Instagram -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -86,6 +87,13 @@
       width: 100%;
     }
 
+    /* Conteneur pour bouton langue + Instagram */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     #langToggle {
       border: 1px solid #D8C19F;
       background: transparent;
@@ -101,14 +109,23 @@
       color: #000;
     }
 
+    .nav-right a {
+      color: #D8C19F;
+      font-size: 1.4rem;
+      transition: 0.3s;
+    }
+
+    .nav-right a:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
     /* HERO */
     header {
-      height: 100vh;
+      padding: 180px 20px 80px;
       display: flex;
-      align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
       animation: fadeIn 1.5s ease-in-out;
     }
 
@@ -150,36 +167,24 @@
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
 
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
+    /* IMAGE ORGANIGRAMME */
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
     }
 
-    .box {
-      background: rgba(255, 255, 255, 0.06);
-      padding: 35px;
+    .image-wrapper img {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
       border-radius: 16px;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
     }
 
-    .box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    .box h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      color: #D8C19F;
-    }
-
-    .box p {
-      line-height: 1.8;
-      font-size: 1rem;
-      opacity: 0.9;
+    .image-wrapper img:hover {
+      transform: scale(1.02);
     }
 
     /* FOOTER */
@@ -211,106 +216,41 @@
         gap: 20px;
       }
     }
-	nav a i:hover {
-		color: #fff;
-		transform: scale(1.1);
-	}
-	
-	/* Conteneur pour aligner bouton langue et Instagram */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* espace entre les deux */
-}
-
-.nav-right a {
-  color: #D8C19F;
-  font-size: 1.4rem;
-  transition: 0.3s;
-}
-
-.nav-right a:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-
   </style>
 </head>
 <body>
 
-	<nav>
-	  <h1>Bal de l’IUT</h1>
-	  <ul>
-		<li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-		<li><a href="about.html" data-fr="À propos" data-en="About">À propos</a></li>
-	  </ul>
-	  
-	  <!-- Conteneur pour la langue + Instagram -->
-	  <div class="nav-right">
-		<a href="https://www.instagram.com/bal_iut_nice/" target="_blank">
-		  <i class="fab fa-instagram"></i>
-		</a>
-		<button id="langToggle">EN</button>
-	  </div>
-	</nav>
-
+  <nav>
+    <h1>Bal de l’IUT</h1>
+    <ul>
+      <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+      <li><a href="about.html" data-fr="À propos" data-en="About">À propos</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="langToggle">EN</button>
+      <a href="https://www.instagram.com/bal_iut_nice/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <header id="home">
     <div>
-      <h2 data-fr="Le Bal de l’IUT de Nice"
-          data-en="The IUT of Nice Prom">
-        Le Bal de l’IUT de Nice
-      </h2>
-      <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
-         data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
-        Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
+      <h2 data-fr="Notre organisation" data-en="Our organization">Notre organisation</h2>
+      <p data-fr="Découvrez comment notre comité organise ce bal exceptionnel, alliant élégance et festivité." 
+         data-en="Discover how our committee organizes this exceptional gala, blending elegance and festivity.">
+         Découvrez comment notre comité organise ce bal exceptionnel, alliant élégance et festivité.
       </p>
     </div>
   </header>
 
-  <!-- PROJET -->
-  <section id="about">
+  <!-- ORGANIGRAMME -->
+  <section id="organization">
     <div class="container">
-      <h3 data-fr="Le projet"
-          data-en="The project">
-        Le projet
-      </h3>
-
-      <div class="columns">
-        <div class="box">
-          <h4 data-fr="Une initiative étudiante"
-              data-en="A student initiative">
-            Une initiative étudiante
-          </h4>
-          <p data-fr="Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT."
-             data-en="We are five second-year BUT GEA students at the IUT of Nice. This associative project aims to organize the IUT prom.">
-            Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT.
-          </p>
-        </div>
-
-        <div class="box">
-          <h4 data-fr="Une soirée inoubliable"
-              data-en="An unforgettable evening">
-            Une soirée inoubliable
-          </h4>
-          <p data-fr="Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants."
-             data-en="Our ambition is to offer a friendly and elegant evening, combining celebration, sharing, and lasting memories for all students.">
-            Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants.
-          </p>
-        </div>
-
-        <div class="box">
-          <h4 data-fr="Bientôt disponible"
-              data-en="Coming soon">
-            Bientôt disponible
-          </h4>
-          <p data-fr="Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site."
-             data-en="Information regarding ticketing, location, and schedule will be available soon on this website.">
-            Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site.
-          </p>
-        </div>
+      <h3 data-fr="L’équipe organisatrice" data-en="The organizing team">L’équipe organisatrice</h3>
+      <div class="image-wrapper">
+        <img src="images/organization.jpg" alt="Organisation du bal de l’IUT">
       </div>
     </div>
   </section>
