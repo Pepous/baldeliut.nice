@@ -253,28 +253,35 @@
 		padding-bottom:8px;
 	  }
 	}
-	@media (max-width: 768px) {
+@media (max-width: 768px) {
 
-	  .countdown {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 16px;
-		max-width: 100%;
-	  }
+  #countdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 
-	  .separator {
-		display: none;
-	  }
+  #countdown .sep {
+    display: none;
+  }
 
-	  .time span {
-		font-size: 2.2rem;
-	  }
+  #countdown .time {
+    min-width: auto;
+  }
 
-	  .time small {
-		font-size: 0.75rem;
-		letter-spacing: 0.08em;
-	  }
-	}
+  #countdown .time span {
+    font-size: 2.6rem;
+  }
+
+  #countdown .time small {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+}
+
 
   </style>
 </head>
