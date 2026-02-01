@@ -226,6 +226,26 @@
   <header>
     <div>
       <h2 data-fr="Le Bal de l’IUT de Nice" data-en="Nice IUT Prom">Le Bal de l’IUT de Nice</h2>
+	  
+		<div id="countdown">
+		  <div class="time-box">
+			<span id="days">00</span>
+			<small>Jours</small>
+		  </div>
+		  <div class="time-box">
+			<span id="hours">00</span>
+			<small>Heures</small>
+		  </div>
+		  <div class="time-box">
+			<span id="minutes">00</span>
+			<small>Minutes</small>
+		  </div>
+		  <div class="time-box">
+			<span id="seconds">00</span>
+			<small>Secondes</small>
+		  </div>
+		</div>
+
       <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
          data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
         Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
@@ -287,4 +307,28 @@
   </script>
 
 </body>
+<script>
+  const targetDate = new Date("March 6, 2026 23:00:00").getTime();
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) return;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, "0");
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
 </html>
