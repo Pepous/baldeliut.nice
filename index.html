@@ -253,6 +253,28 @@
 		padding-bottom:8px;
 	  }
 	}
+	@media (max-width: 768px) {
+
+	  .countdown {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+		max-width: 100%;
+	  }
+
+	  .separator {
+		display: none;
+	  }
+
+	  .time span {
+		font-size: 2.2rem;
+	  }
+
+	  .time small {
+		font-size: 0.75rem;
+		letter-spacing: 0.08em;
+	  }
+	}
 
   </style>
 </head>
