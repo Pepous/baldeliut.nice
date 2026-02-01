@@ -7,7 +7,7 @@
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,7 +16,6 @@
       font-family: "Montserrat", sans-serif;
       color: #fff;
       background: url("images/background.png") center/cover no-repeat fixed;
-      position: relative;
     }
 
     body::before {
@@ -35,59 +34,55 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(216,193,159,0.3);
       flex-wrap: wrap;
       gap: 10px;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(216,193,159,0.3);
+      z-index: 1000;
     }
 
     nav h1 {
       font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      font-size: 1.5rem;
       color: #D8C19F;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 20px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      opacity: 0.85;
-      transition: all 0.3s;
+      opacity: 0.9;
       position: relative;
     }
 
     nav a::after {
       content: "";
-      display: block;
-      height: 2px;
-      width: 0;
-      background: #D8C19F;
-      transition: width 0.3s;
       position: absolute;
       bottom: -4px;
       left: 0;
+      width: 0;
+      height: 2px;
+      background: #D8C19F;
+      transition: width 0.3s;
     }
 
     nav a:hover::after { width: 100%; }
-    nav a i:hover { color: #fff; transform: scale(1.1); }
 
     .nav-buttons {
       display: flex;
+      gap: 10px;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      justify-content: center;
     }
 
     #langToggle, #instagramBtn {
@@ -96,11 +91,13 @@
       color: #D8C19F;
       padding: 6px 14px;
       cursor: pointer;
-      font-weight: 500;
       transition: 0.3s;
     }
 
-    #langToggle:hover, #instagramBtn:hover { background: #D8C19F; color: #000; }
+    #langToggle:hover, #instagramBtn:hover {
+      background: #D8C19F;
+      color: #000;
+    }
 
     header {
       height: 100vh;
@@ -109,172 +106,83 @@
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h2 {
       font-family: "Playfair Display", serif;
-      font-size: 3.8rem;
-      font-weight: 700;
-      margin-bottom: 25px;
+      font-size: 3.5rem;
       color: #D8C19F;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
     }
 
     header p {
-      font-size: 1.2rem;
       max-width: 720px;
-      margin: 0 auto;
       line-height: 1.8;
-      opacity: 0.95;
     }
-
-    section {
-      padding: 120px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    section h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.6rem;
-      margin-bottom: 50px;
-      text-align: center;
-      color: #D8C19F;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-
-    .box {
-      background: rgba(255,255,255,0.06);
-      padding: 35px;
-      border-radius: 16px;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .box:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-
-    .box h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      color: #D8C19F;
-    }
-
-    .box p {
-      line-height: 1.8;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      font-size: 0.85rem;
-      opacity: 0.7;
-      border-top: 1px solid rgba(216,193,159,0.3);
-    }
-
-    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(20px);} 100% { opacity:1; transform: translateY(0);} }
 
     @media (max-width: 768px) {
-      header h2 { font-size: 2.8rem; }
-      nav { justify-content: center; gap: 10px; }
-      nav ul { gap: 15px; justify-content: center; }
-      .nav-buttons { justify-content: center; margin-top: 5px; }
-      #langToggle, #instagramBtn { margin-left: 0; }
+      header h2 { font-size: 2.6rem; }
+      nav { justify-content: center; }
     }
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <h1>Bal de l’IUT</h1>
-    <ul>
-      <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-      <li><a href="about.html" data-fr="À Propos" data-en="About Us">À Propos</a></li>
-    </ul>
-    <div class="nav-buttons">
-      <button id="langToggle">EN</button>
-      <a id="instagramBtn" href="https://www.instagram.com/bal_iut_nice/" target="_blank">
-        <i class="fab fa-instagram"></i>
+<nav>
+  <h1>Bal de l’IUT</h1>
+
+  <ul>
+    <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+    <li><a href="about.html" data-fr="À propos" data-en="About Us">À propos</a></li>
+    <li>
+      <a href="https://www.helloasso.com/associations/bal-de-promo-des-but-2e-annee/evenements/bal-de-promo-des-but-iut-nice-cote-d-azur?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+         target="_blank"
+         data-fr="Billetterie"
+         data-en="Tickets">
+        Billetterie
       </a>
-    </div>
-  </nav>
+    </li>
+  </ul>
 
-  <header>
-    <div>
-      <h2 data-fr="Le Bal de l’IUT de Nice" data-en="Nice IUT Prom">Le Bal de l’IUT de Nice</h2>
-      <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
-         data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
-        Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante.
-      </p>
-    </div>
-  </header>
+  <div class="nav-buttons">
+    <button id="langToggle">EN</button>
+    <a id="instagramBtn" href="https://www.instagram.com/bal_iut_nice/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</nav>
 
-  <section>
-    <div class="container">
-      <h3 data-fr="Le projet" data-en="The Project">Le projet</h3>
-      <div class="columns">
-        <div class="box">
-          <h4 data-fr="Une initiative étudiante" data-en="A Student Initiative">Une initiative étudiante</h4>
-          <p data-fr="Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT."
-             data-en="We are five second-year BUT GEA students at the IUT of Nice. This associative project aims to organize the IUT prom.">
-            Nous sommes cinq étudiants en deuxième année de BUT GEA à l’IUT de Nice. Ce projet associatif a pour objectif l’organisation du bal de l’IUT.
-          </p>
-        </div>
-        <div class="box">
-          <h4 data-fr="Une soirée inoubliable" data-en="An Unforgettable Evening">Une soirée inoubliable</h4>
-          <p data-fr="Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants."
-             data-en="Our ambition is to offer a friendly and elegant evening, combining celebration, sharing, and lasting memories for all students.">
-            Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants.
-          </p>
-        </div>
-        <div class="box">
-          <h4 data-fr="Bientôt disponible" data-en="Coming Soon">Bientôt disponible</h4>
-          <p data-fr="Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site."
-             data-en="Information regarding ticketing, location, and schedule will be available soon on this website.">
-            Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<header>
+  <div>
+    <h2 data-fr="Le Bal de l’IUT de Nice" data-en="Nice IUT Prom">
+      Le Bal de l’IUT de Nice
+    </h2>
+    <p data-fr="Une soirée élégante et mémorable organisée par des étudiants."
+       data-en="An elegant and memorable evening organized by students.">
+      Une soirée élégante et mémorable organisée par des étudiants.
+    </p>
+  </div>
+</header>
 
-  <footer>
-    © Bal de l’IUT de Nice — Projet associatif étudiant
-  </footer>
+<script>
+  const toggle = document.getElementById("langToggle");
+  const elements = document.querySelectorAll("[data-fr]");
+  let lang = localStorage.getItem("lang") || "fr";
 
-  <script>
-    const toggle = document.getElementById("langToggle");
-    const elements = document.querySelectorAll("[data-fr]");
+  function updateLang() {
+    elements.forEach(el => el.textContent = el.dataset[lang]);
+    toggle.textContent = lang === "fr" ? "EN" : "FR";
+  }
 
-    let lang = localStorage.getItem("lang") || "fr";
+  updateLang();
 
-    const updateText = () => {
-      elements.forEach(el => el.textContent = el.dataset[lang]);
-      toggle.textContent = lang === "fr" ? "EN" : "FR";
-    };
-
-    updateText();
-
-    toggle.addEventListener("click", () => {
-      lang = lang === "fr" ? "en" : "fr";
-      localStorage.setItem("lang", lang);
-      updateText();
-    });
-  </script>
+  toggle.addEventListener("click", () => {
+    lang = lang === "fr" ? "en" : "fr";
+    localStorage.setItem("lang", lang);
+    updateLang();
+  });
+</script>
 
 </body>
 </html>
