@@ -195,6 +195,65 @@
       .nav-buttons { justify-content: center; margin-top: 5px; }
       #langToggle, #instagramBtn { margin-left: 0; }
     }
+	/* COUNTDOWN – HERO PREMIUM */
+	#countdown-wrapper{
+	  display:flex;
+	  justify-content:center;
+	  margin: 40px 0 30px;
+	}
+
+	#countdown{
+	  display:flex;
+	  align-items:flex-end;
+	  gap:18px;
+	}
+
+	#countdown .time{
+	  display:flex;
+	  flex-direction:column;
+	  align-items:center;
+	  min-width:120px;
+	}
+
+	#countdown .time span{
+	  font-family:"Playfair Display", serif;
+	  font-size:4.8rem;
+	  font-weight:700;
+	  line-height:1;
+	  color:#D8C19F;
+	  text-shadow:0 8px 25px rgba(0,0,0,0.6);
+	}
+
+	#countdown .time small{
+	  margin-top:8px;
+	  font-size:0.7rem;
+	  letter-spacing:2px;
+	  opacity:0.75;
+	}
+
+	#countdown .sep{
+	  font-family:"Playfair Display", serif;
+	  font-size:3.5rem;
+	  color:rgba(216,193,159,0.6);
+	  padding-bottom:14px;
+	}
+
+	/* Mobile */
+	@media(max-width:768px){
+	  #countdown{
+		gap:10px;
+	  }
+
+	  #countdown .time span{
+		font-size:2.8rem;
+	  }
+
+	  #countdown .sep{
+		font-size:2rem;
+		padding-bottom:8px;
+	  }
+	}
+
   </style>
 </head>
 <body>
@@ -226,25 +285,36 @@
   <header>
     <div>
       <h2 data-fr="Le Bal de l’IUT de Nice" data-en="Nice IUT Prom">Le Bal de l’IUT de Nice</h2>
-	  
-		<div id="countdown">
-		  <div class="time-box">
-			<span id="days">00</span>
-			<small>Jours</small>
-		  </div>
-		  <div class="time-box">
-			<span id="hours">00</span>
-			<small>Heures</small>
-		  </div>
-		  <div class="time-box">
-			<span id="minutes">00</span>
-			<small>Minutes</small>
-		  </div>
-		  <div class="time-box">
-			<span id="seconds">00</span>
-			<small>Secondes</small>
-		  </div>
-		</div>
+<div id="countdown-wrapper">
+  <div id="countdown">
+	<div class="time">
+	  <span id="days">00</span>
+	  <small data-fr="JOURS" data-en="DAYS">JOURS</small>
+	</div>
+
+
+    <div class="sep">:</div>
+
+	<div class="time">
+	  <span id="hours">00</span>
+	  <small data-fr="HEURES" data-en="HOURS">HEURES</small>
+	</div>
+
+	<div class="time">
+	  <span id="minutes">00</span>
+	  <small data-fr="MINUTES" data-en="MINUTES">MINUTES</small>
+	</div>
+
+	<div class="time">
+	  <span id="seconds">00</span>
+	  <small data-fr="SECONDES" data-en="SECONDS">SECONDES</small>
+	</div>
+
+  </div>
+</div>
+
+
+
 
       <p data-fr="Une soirée élégante et mémorable organisée par des étudiants pour rassembler, célébrer et marquer la fin d’une étape importante."
          data-en="An elegant and memorable evening organized by students to gather, celebrate, and mark the end of an important chapter.">
@@ -269,13 +339,6 @@
           <p data-fr="Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants."
              data-en="Our ambition is to offer a friendly and elegant evening, combining celebration, sharing, and lasting memories for all students.">
             Notre ambition est de proposer une soirée conviviale et élégante, mêlant fête, partage et souvenirs mémorables pour l’ensemble des étudiants.
-          </p>
-        </div>
-        <div class="box">
-          <h4 data-fr="Bientôt disponible" data-en="Coming Soon">Bientôt disponible</h4>
-          <p data-fr="Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site."
-             data-en="Information regarding ticketing, location, and schedule will be available soon on this website.">
-            Les informations concernant la billetterie, le lieu et le programme seront prochainement communiquées sur ce site.
           </p>
         </div>
       </div>
